@@ -12,6 +12,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
     flex-wrap: wrap;
 
     
@@ -406,6 +407,7 @@ p{
 .moodlog{
     display: none;
     flex-direction: column;
+    flex-wrap: wrap;
     width: 450px;
     height: 150px;
     align-items: flex-start;
