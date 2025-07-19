@@ -407,7 +407,6 @@ p{
 .moodlog{
     display: none;
     flex-direction: column;
-    flex-wrap: wrap;
     width: 450px;
     height: 150px;
     align-items: flex-start;
@@ -507,7 +506,3 @@ p{
     display: none;
     transition: opacity 0.3s ease;
 }
-
-
-
-
