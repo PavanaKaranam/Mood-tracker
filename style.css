@@ -1,0 +1,507 @@
+.body{
+    margin: 0%;
+    display: flex;
+    
+}
+
+.page{
+    background-color: #eafffe;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    
+}
+
+.mood-button{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #eafffe;
+}
+
+  
+.mood-button .mood1 {
+  transition:
+    margin 0.3s ease,
+    width 0.3s ease,
+    height 0.3s ease,
+    border-radius 0.3s ease,
+    background-color 0.3s ease;
+}
+
+
+
+
+
+
+.mood1{
+    font-family: grenadine-mvb, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+
+    background-color: yellow;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; 
+    border: none;   
+    margin: 2px;
+}
+
+.joy{
+    background-color: #feda00;
+}
+
+.love{
+    background-color: #fed402;
+}
+
+.silly{
+    background-color: #f8ca10;
+}
+
+.ener{
+    background-color: #f8ca10;
+}
+
+.crea{
+    background-color: #fed402;
+}
+
+.exci{
+    background-color: #feda00;
+}
+
+:hover.mood1{
+    width: 165px;
+    height: 165px;
+     border-radius: 30%;
+    margin: 25px;
+
+     transition: 
+    width 0.3s ease,
+    height 0.3s ease,
+    clip-path 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+
+
+.mood2{
+    font-family: grenadine-mvb, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+
+    background-color: yellow;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; 
+    border: none;   
+    margin: 2px;
+}
+
+.curious{
+    background-color: #dce246;
+}
+
+.grate{
+    background-color: #c8da34;
+}
+
+.peace{
+    background-color: #aecc36;
+}
+
+.safe{
+    background-color: #aecc36;
+}
+
+.calm{
+    background-color: #c8da34;
+}
+
+.fine{
+    background-color: #dce246;
+}
+
+
+:hover.mood2{
+    width: 160px;
+    height: 160px;
+    border-radius: 15%;
+    margin: 25px;
+
+     transition: 
+    width 0.3s ease,
+    height 0.3s ease,
+    background-color 0.3s ease,
+    clip-path 0.3s ease,
+    border-radius 0.3s ease;
+
+}
+
+
+
+
+
+.mood3{
+    font-family: grenadine-mvb, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+
+    background-color: yellow;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; 
+    border: none;   
+    margin: 2px;
+    overflow: hidden;
+}
+
+.tire{
+    background-color: #b5e0db;
+}
+
+.dissap{
+    background-color: #8ed2ca;
+}
+
+.bored{
+    background-color: #72cac7;
+}
+
+.sad{
+    background-color: #72cac7;
+}
+
+.lone{
+    background-color: #72cac7;
+}
+
+.asham{
+    background-color: #8ed2ca;
+}
+
+.embarrassed{
+    background-color: #b5e0db;
+}
+
+
+:hover.mood3{
+    width: 160px;
+    height: 160px;
+    border-radius: 15%;
+    margin: 25px;
+
+     transition: 
+    width 0.3s ease,
+    height 0.3s ease,
+    background-color 0.3s ease,
+    clip-path 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+
+.mood4{
+    font-family: grenadine-mvb, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+
+    background-color: yellow;
+    width: 160px;
+    height: 160px;
+    border-radius: 50%; 
+    border: none;   
+    margin: 2px;
+}
+.annoyed{
+    background-color: #f7822b;
+}
+
+.angry{
+    background-color: #f46131;
+}
+
+.jealous{
+    background-color: #ed4e29;
+}
+
+.anxious{
+    background-color: #ed4e29;
+}
+
+.stressed{
+    background-color: #f46131;
+}
+
+.embarrassed{
+    background-color: #f7822b;
+}
+
+:hover.mood4{
+    width: 160px;
+    height: 160px;
+    border-radius: 30%;
+    margin: 25px;
+
+    transition: 
+    width 0.3s ease,
+    height 0.3s ease,
+    background-color 0.3s ease,
+    clip-path 0.3s ease,
+    border-radius 0.3s ease;
+}
+
+.mood-button .mood1 {
+  transition:
+    margin 0.5s ease,
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.mood-button .mood2 {
+  transition:
+    margin 0.5s ease,
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.mood-button .mood3 {
+  transition:
+    margin 0.5s ease,
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background-color 0.5s ease;
+}
+
+.mood-button .mood4 {
+  transition:
+    margin 0.5s ease,
+    width 0.5s ease,
+    height 0.5s ease,
+    border-radius 0.5s ease,
+    background-color 0.5s ease;
+}
+
+
+
+#customAlert{
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    transition: 0.5 ease;
+
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ff9849;
+    width: 350px;
+    padding: 40px 40px;
+    border: 8px solid #72cac7;
+    box-shadow: 0 0 0 8px #ff9849;
+    box-shadow: 0px 0px 3px 1px #025661;
+    
+    margin-top: 20px;
+    margin-bottom: 20px;
+    
+    border-radius: 20px;
+    
+     font-family: grenadine-mvb, sans-serif;   
+     color: #00605d;
+      
+}
+.close{
+    display: flex;
+    align-items: flex-end;
+    padding-left: 350px;
+    margin-top: -20px;
+    border: none;
+    background-color: #ff9849;
+    color: #01625f;
+    font-size: 20px;
+}
+.close:hover{
+    transform: scale(1.05);
+    transform-origin: right center;
+}
+
+.alert-content{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title{
+    display: flex;
+    font-size: 50px;
+    font-weight: 600;
+    margin: 0;
+    margin-top: -10px;
+}
+
+p{
+    display: flex;
+    font-size: 23px;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+#confirmBtn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #85e6e3;
+    border: none;
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 20px;
+    border-radius: 5px;  
+    margin-top: 10;
+    display: flex;
+    
+
+
+     font-family: grenadine-mvb, sans-serif;   
+     color: #01625f;
+}
+
+#confirmBtn:hover{
+    transform: scale(1.02);
+    transition: transform 0.1s ease-out;
+    background-color: #85edea;
+    box-shadow: 0px 0px 1px 1px #66bfbc;
+}
+
+.container{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #eafffe;
+    width: 100%;
+    padding: 10px;
+    
+    gap: 25px;
+    margin-right: 20px;
+    column-gap: 80px;
+}
+.moodlog{
+    display: none;
+    flex-direction: column;
+    width: 450px;
+    height: 150px;
+    align-items: flex-start;
+    justify-content: flex-start;
+    background-color: #bbeeec;
+    border-radius: 25px;
+    z-index: 9999;
+    
+    
+}
+
+.date,
+.day{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 10px;
+    margin-left: 20px;
+    margin-top: 15px;
+    color: #272727;
+}
+
+.day{
+    margin-top: -5px;
+    margin-bottom: 25px;
+}
+
+.time{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    margin: 10px;
+    margin-left: 370px;
+    
+    margin-top: 15px;
+    color: #272727;
+    margin-top: -55px;
+}
+
+
+.result{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 25px;
+    font-weight: 300;
+    font-style: italic;
+    margin-left: 20px;
+    margin-bottom: -5px;
+    padding-top: 20px;
+    color: #003749eb;
+}
+
+.log{
+       font-family: grenadine-mvb, sans-serif;
+    font-size: 36px;
+    font-weight: 500;
+    margin-left: 20px;
+    color: #272727;
+}
+
+
+.clearContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    background-color: #eafffe;
+    height: 100px;
+}
+#clearLog{
+    border: none;
+     display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #85e6e3;
+    border: none;
+    min-width: 100px;
+    min-height: 50px;
+    font-size: 16px;
+    border-radius: 5px;  
+    margin-top: 10;
+    display: flex;
+    
+
+
+     font-family: grenadine-mvb, sans-serif;   
+     color: #01625f;
+}
+
+#clearLog:hover{
+    transform: scale(1.02);
+    transition: transform 0.1s ease-out;
+    background-color: #85edea;
+    box-shadow: 0px 0px 1px 1px #66bfbc;
+}
+.moodlog {
+    display: none;
+    transition: opacity 0.3s ease;
+}
