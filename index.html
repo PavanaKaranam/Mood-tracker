@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moodie</title>
+    <link rel="stylesheet" href="https://use.typekit.net/sxa0gnu.css">
+    <link rel="stylesheet" href="./style.css">
+    
+</head>
+<body>
+     <div class="page">
+
+<div class="mood-button">
+    
+    <div class="yellow">
+    
+        <button class="mood1 joy">Joy</button>
+        <button class="mood1 love">Love</button>
+        <button class="mood1 silly">Silly</button>
+      
+        <button class="mood1 ener">Energetic</button>
+        <button class="mood1 crea">Creative</button>
+        <button class="mood1 exci">Excited</button>       
+    </div>
+   
+  <div class="green">
+    <button class="mood2 curious">Curious</button>
+    <button class="mood2 grate">Grateful</button>
+    <button class="mood2 peace">Peaceful</button>
+    
+   
+    <button class="mood2 safe">Safe</button>
+    <button class="mood2 calm">Calm</button>
+    <button class="mood2 fine">Fine</button>
+   </div> 
+     
+   <div class="blue">
+    <button class="mood3 tire">Tired</button>
+    <button class="mood3 dissap">Disappointed</button>
+    <button class="mood3 bored">Bored</button>
+
+    <button class="mood3 sad">Sad</button>
+    <button class="mood3 lone">Lonely</button>
+    <button class="mood3 asham">Ashamed</button>
+    
+   </div>
+  
+   <div class="red">
+    <button class="mood4 annoyed">Annoyed</button>
+    <button class="mood4 angry">Angry</button>
+    <button class="mood4 jealous">Jealous</button>
+    <button class="mood4 anxious">Anxious</button>
+    <button class="mood4 stressed">Stressed</button>
+    <button class="mood4 embarrassed">Embarrassed</button>
+   </div>
+    
+
+    </div>
+    </div>  
+    
+     <div class="container">
+         <div class="moodlog">
+        <p class="date"></p>
+        <p class="day"></p>
+        <p class="time"></p>
+        <p class="result">I am feeling</p>
+        <p class="log"></p>
+    </div>
+    </div>
+    
+    <!-- <button id="showAlert">Show Alert</button> -->
+    <div id="customAlert" class="alert-box">
+        <button class="close">&#10005</button>
+        <div class="alert-content">
+            <p class="title">HI!</p>
+            <p>Your mood has been saved.</p>
+            <button id="confirmBtn">OK</button>
+
+        </div>
+    </div>
+    <div class="clearContainer">
+        <button id="clearLog">Clear Mood Log</button>
+    </div>
+    
+   
+   
+
+
+<script>
+    const moodColors = {
+        Joy: "#feda00",
+        Love: "#fed402",
+        Silly: "#f8ca10",
+        Energetic: "#f8ca10",
+        Creative: "#fed402",
+        Excited: "#feda00",
+        Curious: "#dce246",
+        Grateful: "#c8da34",
+        Peaceful: "#aecc36",
+        Safe: "#aecc36",
+        Calm: "#c8da34",
+        Fine: "#dce246",
+        Annoyed: "#f7822b",
+        Angry: "#f46131",
+        Jealous: "#ed4e29",
+        Anxious: "#ed4e29",
+        Stressed: "#f46131",
+        Embarrassed: "#f7822b",
+        Tired: "#b5e0db",
+        Disappointed: "#8ed2ca",
+        Bored: "#72cac7",
+        Sad: "#72cac7",
+        Lonely: "#8ed2ca",
+        Ashamed: "#b5e0db"
+    };
+    const customAlertBtn = document.querySelector('#customAlert');
+    const confirmBtn = document.querySelector("#confirmBtn");
+    const close = document.querySelector(".close")
+    const buttons = document.querySelectorAll(".mood1, .mood2, .mood3, .mood4");
+
+    const container = document.querySelector(".container")
+    const moodlog = document.querySelector(".moodlog");
+    const date = document.querySelector(".date");
+    const day = document.querySelector(".day");
+    const time = document.querySelector(".time");
+    const log = document.querySelector(".log");
+
+    let selectedMood = "";
+    
+
+    buttons.forEach(button => {
+  button.addEventListener("click", () => {
+    selectedMood = button.textContent.trim();
+    const savedMood = localStorage.getItem("selectedMood");
+    customAlertBtn.style.display = "flex";
+  });
+});
+
+confirmBtn.addEventListener("click", () => {
+    customAlertBtn.style.display = "none";
+    container.style.display = "flex";
+ 
+    console.log("Selected Mood:", selectedMood);
+    console.log("Color from Map:", moodColors[selectedMood]);
+    moodlog.style.backgroundColor = moodColors[selectedMood];
+
+    const newLog = moodlog.cloneNode(true);
+    newLog.style.display = "flex";
+    newLog.querySelector(".date").textContent = new Date().toLocaleDateString();
+    newLog.querySelector(".day").textContent = new Date().toLocaleString('en-US', { weekday: 'long' });
+    newLog.querySelector(".time").textContent = new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' });
+    newLog.querySelector(".log").textContent = selectedMood;
+    newLog.style.backgroundColor = moodColors[selectedMood];
+
+    container.appendChild(newLog);
+
+    let moodLogs = JSON.parse(localStorage.getItem("moodLogs")) || [];
+
+    moodLogs.push({
+        mood: selectedMood,
+        date: new Date().toLocaleDateString(),
+        day: new Date().toLocaleString('en-US', { weekday: 'long' }),
+        time: new Date().toLocaleTimeString('en-US', { hour: 'numeric', minute: '2-digit' }),
+        color: moodColors[selectedMood]
+        });
+        localStorage.setItem("moodLogs", JSON.stringify(moodLogs));
+        });
+
+    close.addEventListener("click", () => {
+        customAlertBtn.style.display = "none";
+    });
+
+
+    date.textContent = new Date().toLocaleDateString();
+    day.textContent = new Date().toLocaleDateString("en-US", {weekday : "short"});
+    time.textContent = new Date().toLocaleTimeString("en-us", {
+        hour:"2-digit",
+        minute:"2-digit"
+    });
+     log.textContent = selectedMood;
+
+
+     const clearLog = document.querySelector("#clearLog");
+        clearLog.addEventListener("click", () => {
+            localStorage.removeItem("moodLogs");
+
+            const logs = container.querySelectorAll(".moodlog");
+        logs.forEach((log, index) => {
+            if (log !== 0) log.remove();
+
+            moodlog.style.display = "none";
+            console.log("Mood Log cleared");
+        });
+        
+        });
+
+
+
+
+    
+   
+    window.addEventListener("DOMContentLoaded", () => {
+        const savedLogs = JSON.parse(localStorage.getItem("moodLogs")) || [];
+        if (savedLogs.length > 0){
+            container.style.display = "flex";
+        }
+        savedLogs.forEach(entry => {
+            const newLog = moodlog.cloneNode(true);
+            newLog.querySelector(".date").textContent = entry.date;
+            newLog.querySelector(".day").textContent = entry.day;
+            newLog.querySelector(".time").textContent = entry.time;
+            newLog.querySelector(".log").textContent = entry.mood;
+            newLog.style.backgroundColor = entry.color;
+
+            newLog.style.display = "flex"; // make sure it's visible!
+            container.appendChild(newLog);
+        });
+
+        moodlog.style.display = "none"; // hide template!
+        });
+       
+
+       
+
+        
+</script>
+   
+    
+</body>
+</html>
