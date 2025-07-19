@@ -508,8 +508,7 @@ p{
     transition: opacity 0.3s ease;
 }
 
-@media (max-width: 600px) {
-    /* ===== MOBILE RESPONSIVE STYLING ===== */
+
 @media (max-width: 600px) {
   .page {
     flex-direction: column;
@@ -521,6 +520,7 @@ p{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: 10px;
   }
 
@@ -573,4 +573,4 @@ p{
   }
 }
 
-}
+
