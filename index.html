@@ -15,13 +15,13 @@
     
     <div class="yellow">
     
-        <button class="mood1 joy">Joy</button>
-        <button class="mood1 love">Love</button>
-        <button class="mood1 silly">Silly</button>
-      
-        <button class="mood1 ener">Energetic</button>
-        <button class="mood1 crea">Creative</button>
-        <button class="mood1 exci">Excited</button>       
+    <button class="mood1 joy">Joy</button>
+     <button class="mood1 love">Love</button>
+    <button class="mood1 silly">Silly</button>
+            
+    <button class="mood1 ener">Energetic</button>
+    <button class="mood1 crea">Creative</button>
+    <button class="mood1 exci">Excited</button>                 
     </div>
    
   <div class="green">
@@ -128,7 +128,7 @@
 
     let selectedMood = "";
     
-
+//the alert pops up, and the mood gets stored in the local storage and for further works
     buttons.forEach(button => {
   button.addEventListener("click", () => {
     selectedMood = button.textContent.trim();
@@ -137,6 +137,7 @@
   });
 });
 
+//the mood log pops up
 confirmBtn.addEventListener("click", () => {
     customAlertBtn.style.display = "none";
     container.style.display = "flex";
@@ -145,6 +146,7 @@ confirmBtn.addEventListener("click", () => {
     console.log("Color from Map:", moodColors[selectedMood]);
     moodlog.style.backgroundColor = moodColors[selectedMood];
 
+//new log gets made using the template moodlogs because moodlogs doesnt increment of beside the first one 
     const newLog = moodlog.cloneNode(true);
     newLog.style.display = "flex";
     newLog.querySelector(".date").textContent = new Date().toLocaleDateString();
@@ -155,6 +157,8 @@ confirmBtn.addEventListener("click", () => {
 
     container.appendChild(newLog);
 
+//pushing the selected moods to be stored locally. (get item first, push stuff to it and then stringify it)
+// the [] was imp here
     let moodLogs = JSON.parse(localStorage.getItem("moodLogs")) || [];
 
     moodLogs.push({
@@ -167,11 +171,12 @@ confirmBtn.addEventListener("click", () => {
         localStorage.setItem("moodLogs", JSON.stringify(moodLogs));
         });
 
+//close button on the alert
     close.addEventListener("click", () => {
         customAlertBtn.style.display = "none";
     });
 
-
+//moodlogs: the template
     date.textContent = new Date().toLocaleDateString();
     day.textContent = new Date().toLocaleDateString("en-US", {weekday : "short"});
     time.textContent = new Date().toLocaleTimeString("en-us", {
@@ -180,7 +185,7 @@ confirmBtn.addEventListener("click", () => {
     });
      log.textContent = selectedMood;
 
-
+//clear log
      const clearLog = document.querySelector("#clearLog");
         clearLog.addEventListener("click", () => {
             localStorage.removeItem("moodLogs");
@@ -195,11 +200,8 @@ confirmBtn.addEventListener("click", () => {
         
         });
 
-
-
-
     
-   
+//loading with the stored moods when realoded  
     window.addEventListener("DOMContentLoaded", () => {
         const savedLogs = JSON.parse(localStorage.getItem("moodLogs")) || [];
         if (savedLogs.length > 0){
@@ -213,11 +215,11 @@ confirmBtn.addEventListener("click", () => {
             newLog.querySelector(".log").textContent = entry.mood;
             newLog.style.backgroundColor = entry.color;
 
-            newLog.style.display = "flex"; // make sure it's visible!
+            newLog.style.display = "flex"; 
             container.appendChild(newLog);
         });
 
-        moodlog.style.display = "none"; // hide template!
+        moodlog.style.display = "none"; 
         });
        
 
@@ -229,3 +231,15 @@ confirmBtn.addEventListener("click", () => {
     
 </body>
 </html>
+
+<!-- somethings ive learnt:
+a clone can be called before the specifs of a template.
+used JSON for the first time (girl used so many for the first time but was less 
+clueless than before even with the new stuff. i think i am getting a hang of the structure)
+had a lot of fun with the css
+used transitions for the first time is css
+the template thing?? kinda blew my mind that i could do that too
+the interesting (maybe not) thing was how the template kept getting called even when it wasnt 
+the one being viewed. ig that is why it is called a template duh.
+overall i would like to consider this a semi-solid project.
+ -->
