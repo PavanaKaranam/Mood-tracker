@@ -1,6 +1,6 @@
 # Mood-tracker
 
-hey! Another project to check my resent JS skills out.
+hey! Another project to check my recent JS skills out.
 
 <H2>presenting to you Moodie the mood tracker!</H2>
 <a href = "https://pavanakaranam.github.io/Moodie-the-Mood-Tracker/">Review it live!</a>
